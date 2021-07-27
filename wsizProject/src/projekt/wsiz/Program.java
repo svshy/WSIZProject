@@ -6,7 +6,12 @@ public class Program {
 
     public static void main(String[] args) {
 
-        Employee employee = new Employee("Jan", "Kowalski", 25);
-        System.out.println(employee);
+        //tworzenie obiektu przez konstruktor
+        Employee employee1 = new Employee("Jan", "Kowalski", 25);
+        System.out.println(employee1);
+
+        //tworzenie i zwrócenie obiektu przez metodę statyczną
+        Employee employee2 = Employee.createAndReadEmployee();
+        System.out.println(employee2);
     }
 }
