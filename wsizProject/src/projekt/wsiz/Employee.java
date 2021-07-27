@@ -1,3 +1,5 @@
+package projekt.wsiz;
+
 public class Employee {
     private String firstname;
     private String lastname;
