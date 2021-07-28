@@ -13,5 +13,10 @@ public class Program {
         //tworzenie i zwrócenie obiektu przez metodę statyczną
         Employee employee2 = Employee.createAndReadEmployee();
         System.out.println(employee2);
+
+        Company company = new Company();
+        company.add(employee1);
+        company.add(employee2);
+
     }
 }

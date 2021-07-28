@@ -20,7 +20,7 @@ public class Employee {
 
     }
 
-    //utworzenie obiektu i zaczytanie danych przez metodę statyczną
+    //utworzenie obiektu i wczytanie danych przez metodę statyczną
     public static Employee createAndReadEmployee() {
         Employee employee = new Employee();
         Scanner scan = new Scanner(System.in);
