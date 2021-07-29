@@ -1,5 +1,6 @@
 package projekt.wsiz;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Employee {
@@ -30,9 +31,20 @@ public class Employee {
         employee.setLastname(scan.nextLine());
         System.out.print("Podaj wiek: ");
         employee.setAge(scan.nextInt());
-        //pobranie nowej linii po int
-
         return employee;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return age == employee.age && Objects.equals(firstname, employee.firstname) && Objects.equals(lastname, employee.lastname);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstname, lastname, age);
     }
 
     public String getFirstname() {

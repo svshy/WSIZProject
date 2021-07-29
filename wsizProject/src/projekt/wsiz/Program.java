@@ -5,17 +5,21 @@ import projekt.wsiz.Employee;
 public class Program {
 
     public static void main(String[] args) {
-
-        //tworzenie obiektu przez konstruktor
-        Employee employee1 = new Employee("Jan", "Kowalski", 25);
-
-        //tworzenie i zwrócenie obiektu przez metodę statyczną
-        Employee employee2 = Employee.createAndReadEmployee();
-
         Company company = new Company();
+        //tworzenie obiektu przez konstruktor
+        Employee employee1 = new Employee("Anna", "Kowalska", 25);
+        Employee employee2 = new Employee("Jan", "Kowalski", 25);
+        Employee employee3 = new Employee("Anna", "Kowalska", 25);
+        Employee employee4 = new Employee("Anna", "Kowalska", 25);
+
         company.add(employee1);
         company.add(employee2);
+        company.add(employee3);
+        company.add(employee4);
 
+        company.add();
         company.printEmployees();
+
+
     }
 }
