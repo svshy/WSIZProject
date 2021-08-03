@@ -20,11 +20,20 @@ public class Program {
 
             int selectOption = scan.nextInt();
             switch (selectOption) {
-                case 1 -> company.printEmployees();
-                case 2 -> company.add();
-                case 3 -> company.removeEmployee();
-                case 9 -> isWorking = false;
-                default -> System.out.println("Operacja o podanym numerze nie istnieje");
+                case 1:
+                    company.printEmployees();
+                    break;
+                case 2:
+                    company.add();
+                    break;
+                case 3:
+                    company.removeEmployee();
+                    break;
+                case 9:
+                    isWorking = false;
+                    break;
+                default:
+                    System.out.println("Operacja o podanym numerze nie istnieje");
             }
 
         }
