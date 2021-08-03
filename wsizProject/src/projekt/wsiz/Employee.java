@@ -7,16 +7,17 @@ public class Employee {
     private String firstname;
     private String lastname;
     private int age;
+    private Sex sex;
 
 
     //utowrzenie obiektu przez konstruktor
-    public Employee(String firstname, String lastname, int age) {
+    public Employee(String firstname, String lastname, int age, Sex sex) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.age = age;
+        this.sex = sex;
     }
 
-    //konstruktor domyślny
     public Employee() {
 
     }
@@ -31,6 +32,9 @@ public class Employee {
         employee.setLastname(scan.nextLine());
         System.out.print("Podaj wiek: ");
         employee.setAge(scan.nextInt());
+        System.out.print("Podaj płeć: ");
+        char sexChar = scan.next().toUpperCase().charAt(0);
+        employee.setSex(sexChar == 'K' ? Sex.FEMALE:Sex.MALE);
         return employee;
     }
 
@@ -39,12 +43,12 @@ public class Employee {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return age == employee.age && Objects.equals(firstname, employee.firstname) && Objects.equals(lastname, employee.lastname);
+        return age == employee.age && Objects.equals(firstname, employee.firstname) && Objects.equals(lastname, employee.lastname) && sex == employee.sex;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstname, lastname, age);
+        return Objects.hash(firstname, lastname, age, sex);
     }
 
     public String getFirstname() {
@@ -71,9 +75,18 @@ public class Employee {
         this.age = age;
     }
 
+    public Sex getSex() {
+        return sex;
+    }
+
+    public void setSex(Sex sex) {
+        this.sex = sex;
+    }
+
     // nadpisana metoda toString zwracająca informacje o pracowniku
+
     @Override
     public String toString() {
-        return firstname + " " + lastname + " " + age;
+        return firstname + " " + lastname + " " + age + " " + sex.getSex();
     }
 }
