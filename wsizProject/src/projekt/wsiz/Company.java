@@ -38,12 +38,17 @@ public class Company {
     }
 
     public void printEmployees() {
-        System.out.println("------------------");
-        for (int i = 0; i < employees.size(); i++) {
-            Employee employee = employees.get(i);
-            int employeeIndex = i + 1;
-            System.out.println(employeeIndex + "  " + employee);
+        if(employees.size() == 0)
+            System.out.println("Brak pracowników na liście");
+        else {
+            System.out.println("------------------");
+            for (int i = 0; i < employees.size(); i++) {
+                Employee employee = employees.get(i);
+                int employeeIndex = i + 1;
+                System.out.println(employeeIndex + "  " + employee);
+            }
+            System.out.println("------------------");
         }
-        System.out.println("------------------");
     }
+
 }

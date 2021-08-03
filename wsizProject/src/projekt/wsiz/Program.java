@@ -2,27 +2,32 @@ package projekt.wsiz;
 
 import projekt.wsiz.Employee;
 
+import java.util.Scanner;
+
 public class Program {
 
     public static void main(String[] args) {
         Company company = new Company();
-        //tworzenie obiektu przez konstruktor
-        Employee employee1 = new Employee("Anna", "Kowalska", 25);
-        Employee employee2 = new Employee("Jan", "Kowalski", 25);
-        Employee employee3 = new Employee("abc", "Kowalska", 25);
-        Employee employee4 = new Employee("def", "Kowalska", 25);
+        Scanner scan = new Scanner(System.in);
+        boolean isWorking = true;
+        while (isWorking) {
+            System.out.println("Lista operacji:\n");
+            System.out.println("1 - wypisz listę pracowników");
+            System.out.println("2 - dodaj pracownika");
+            System.out.println("3 - usuń pracownika");
+            System.out.println("9 - zakończ program\n");
+            System.out.print("Podaj numer operacji: ");
 
-        company.add(employee1);
-        company.add(employee2);
-        company.add(employee3);
-        company.add(employee4);
+            int selectOption = scan.nextInt();
+            switch (selectOption) {
+                case 1 -> company.printEmployees();
+                case 2 -> company.add();
+                case 3 -> company.removeEmployee();
+                case 9 -> isWorking = false;
+                default -> System.out.println("Operacja o podanym numerze nie istnieje");
+            }
 
-        company.add();
-        company.printEmployees();
-
-        company.removeEmployee();
-
-        company.printEmployees();
-
+        }
     }
+
 }
