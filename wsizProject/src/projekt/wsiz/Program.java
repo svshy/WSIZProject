@@ -9,8 +9,8 @@ public class Program {
         //tworzenie obiektu przez konstruktor
         Employee employee1 = new Employee("Anna", "Kowalska", 25);
         Employee employee2 = new Employee("Jan", "Kowalski", 25);
-        Employee employee3 = new Employee("Anna", "Kowalska", 25);
-        Employee employee4 = new Employee("Anna", "Kowalska", 25);
+        Employee employee3 = new Employee("abc", "Kowalska", 25);
+        Employee employee4 = new Employee("def", "Kowalska", 25);
 
         company.add(employee1);
         company.add(employee2);
@@ -20,6 +20,9 @@ public class Program {
         company.add();
         company.printEmployees();
 
+        company.removeEmployee();
+
+        company.printEmployees();
 
     }
 }
