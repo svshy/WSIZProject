@@ -30,8 +30,8 @@ public class Company {
         System.out.println("Podaj numer porządkowy pracownika, którego chcesz usunąć");
         int employeeIndex = scan.nextInt();
             while (employeeIndex < 1 || employeeIndex > employees.size()) {
-                System.out.println("Lista nie zawiera pracownika o podanym numerze porządkowym");
-                System.out.println("Podaj poprawny numer porządkowy pracownika");
+                System.err.println("Lista nie zawiera pracownika o podanym numerze porządkowym");
+                System.err.println("Podaj poprawny numer porządkowy pracownika");
                 employeeIndex = scan.nextInt();
             }
         employees.remove(employeeIndex-1);
@@ -39,7 +39,7 @@ public class Company {
 
     public void printEmployees() {
         if(employees.size() == 0)
-            System.out.println("Brak pracowników na liście");
+            System.err.println("Brak pracowników na liście");
         else {
             System.out.println("------------------");
             for (int i = 0; i < employees.size(); i++) {

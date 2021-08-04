@@ -1,5 +1,7 @@
 package projekt.wsiz;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -8,14 +10,19 @@ public class Employee {
     private String lastname;
     private int age;
     private Sex sex;
+    private int salary;
+    private String[] skills;
+
 
 
     //utowrzenie obiektu przez konstruktor
-    public Employee(String firstname, String lastname, int age, Sex sex) {
+    public Employee(String firstname, String lastname, int age, Sex sex, int salary, String[] skills) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.age = age;
         this.sex = sex;
+        this.salary = salary;
+        this.skills = skills;
     }
 
     public Employee() {
@@ -35,6 +42,12 @@ public class Employee {
         System.out.print("Podaj płeć: ");
         char sexChar = scan.next().toUpperCase().charAt(0);
         employee.setSex(sexChar == 'K' ? Sex.FEMALE:Sex.MALE);
+        System.out.print("Podaj zarobki: ");
+        employee.salary = scan.nextInt();
+        scan.nextLine();
+        System.out.println("Podaj umiejętności: ");
+        String[] skills = scan.nextLine().split(",");
+        employee.setSkills(skills);
         return employee;
     }
 
@@ -83,10 +96,28 @@ public class Employee {
         this.sex = sex;
     }
 
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
+    public String[] getSkills() {
+        return skills;
+    }
+
+    public void setSkills(String[] skills) {
+        this.skills = skills;
+    }
+
     // nadpisana metoda toString zwracająca informacje o pracowniku
+
 
     @Override
     public String toString() {
-        return firstname + " " + lastname + " " + age + " " + sex.getSex();
+        return firstname + " " + lastname + " " + age + " " + sex.getSex() + " " + salary + " " + Arrays.toString(skills);
+
     }
 }

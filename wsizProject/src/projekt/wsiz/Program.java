@@ -33,7 +33,7 @@ public class Program {
                     isWorking = false;
                     break;
                 default:
-                    System.out.println("Operacja o podanym numerze nie istnieje");
+                    System.err.println("Operacja o podanym numerze nie istnieje");
             }
 
         }
