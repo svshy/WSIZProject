@@ -2,6 +2,7 @@ package projekt.wsiz;
 
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.Scanner;
 
 public abstract class Employee {
     private String firstname;
@@ -18,6 +19,10 @@ public abstract class Employee {
         this.sex = sex;
         this.salary = salary;
         this.skills = skills;
+    }
+
+    protected Employee(){
+
     }
 
     @Override
@@ -37,5 +42,27 @@ public abstract class Employee {
     public String toString() {
         return firstname + " " + lastname + " " + age + " " + sex.getSex() + " " + salary + " " + Arrays.toString(skills);
 
+    }
+
+    protected void readFields(){
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Podaj imię: ");
+        this.firstname = scan.next();
+        System.out.print("Podaj nazwisko: ");
+        this.lastname = scan.next();
+        System.out.print("Podaj wiek: ");
+        this.age = scan.nextInt();
+        System.out.print("Podaj płeć: ");
+        char sexChar = scan.next().toUpperCase().charAt(0);
+        this.sex = sexChar == 'K' ? Sex.FEMALE : Sex.MALE;
+        System.out.print("Podaj zarobki: ");
+        this.salary = scan.nextInt();
+        scan.nextLine();
+        System.out.println("Podaj umiejętności: ");
+        String[] skills = scan.nextLine().split(",");
+        for (int i = 0; i < skills.length; i++) {
+            skills[i] = skills[i].trim();
+        }
+        this.skills = skills;
     }
 }

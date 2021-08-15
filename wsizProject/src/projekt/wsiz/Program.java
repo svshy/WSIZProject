@@ -7,8 +7,11 @@ import java.util.Scanner;
 public class Program {
 
     public static void main(String[] args) {
+
         Company company = new Company();
+
         Scanner scan = new Scanner(System.in);
+
         boolean isWorking = true;
         while (isWorking) {
             System.out.println("Lista operacji:\n");

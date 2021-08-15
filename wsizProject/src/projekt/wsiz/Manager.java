@@ -6,4 +6,16 @@ public class Manager extends Employee {
         super(firstname, lastname, age, sex, salary, skills);
     }
 
+    private Manager() {
+        super();
+    }
+
+
+    static Manager read(){
+        Manager manager = new Manager();
+
+        manager.readFields();
+
+        return manager;
+    }
 }

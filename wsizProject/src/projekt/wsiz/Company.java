@@ -19,12 +19,12 @@ public class Company {
 
 
     void addDeveloper() {
-        Employee newEmployee = EmployeeReader.createAndReadEmployee(EmployeeType.DEVELOPER);
+        Employee newEmployee = Developer.read();
         add(newEmployee);
     }
 
     void addManager() {
-        Employee newEmployee = EmployeeReader.createAndReadEmployee(EmployeeType.MANAGER);
+        Employee newEmployee = Manager.read();
         add(newEmployee);
     }
 

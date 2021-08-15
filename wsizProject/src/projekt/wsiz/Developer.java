@@ -6,5 +6,16 @@ public class Developer extends Employee {
         super(firstname, lastname, age, sex, salary, skills);
     }
 
+    private Developer() {
+        super();
+    }
+
+
+    static Developer read(){
+        Developer developer = new Developer();
+        developer.readFields();
+
+        return developer;
+    }
 }
 
