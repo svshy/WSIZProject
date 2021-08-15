@@ -1,9 +1,7 @@
 package projekt.wsiz;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
-import java.util.Scanner;
 
 public abstract class Employee {
     private String firstname;

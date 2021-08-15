@@ -19,12 +19,12 @@ public class Company {
 
 
     void addDeveloper() {
-        Employee newEmployee = Developer.createAndReadEmployee();
+        Employee newEmployee = EmployeeReader.createAndReadEmployee(EmployeeType.DEVELOPER);
         add(newEmployee);
     }
 
     void addManager() {
-        Employee newEmployee = Manager.createAndReadEmployee();
+        Employee newEmployee = EmployeeReader.createAndReadEmployee(EmployeeType.MANAGER);
         add(newEmployee);
     }
 
@@ -32,16 +32,16 @@ public class Company {
         Scanner scan = new Scanner(System.in);
         System.out.println("Podaj numer porządkowy pracownika, którego chcesz usunąć");
         int employeeIndex = scan.nextInt();
-            while (employeeIndex < 1 || employeeIndex > employees.size()) {
-                System.err.println("Lista nie zawiera pracownika o podanym numerze porządkowym");
-                System.err.println("Podaj poprawny numer porządkowy pracownika");
-                employeeIndex = scan.nextInt();
-            }
-        employees.remove(employeeIndex-1);
+        while (employeeIndex < 1 || employeeIndex > employees.size()) {
+            System.err.println("Lista nie zawiera pracownika o podanym numerze porządkowym");
+            System.err.println("Podaj poprawny numer porządkowy pracownika");
+            employeeIndex = scan.nextInt();
+        }
+        employees.remove(employeeIndex - 1);
     }
 
     public void printEmployees() {
-        if(employees.size() == 0)
+        if (employees.size() == 0)
             System.err.println("Brak pracowników na liście");
         else {
             System.out.println("------------------");
