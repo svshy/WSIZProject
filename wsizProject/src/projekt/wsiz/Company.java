@@ -17,11 +17,14 @@ public class Company {
         employees.add(newEmployee);
     }
 
-    /*przeciążenie metody add - metoda nie przyjmuje stworzonego obiektu nowego pracownika
-    zamiast tego wywołuje metodę statyczną dodającą pracownika i dodaje go do listy
-     */
-    public void add() {
-        Employee newEmployee = Employee.createAndReadEmployee();
+
+    void addDeveloper() {
+        Employee newEmployee = Developer.createAndReadEmployee();
+        add(newEmployee);
+    }
+
+    void addManager() {
+        Employee newEmployee = Manager.createAndReadEmployee();
         add(newEmployee);
     }
 
