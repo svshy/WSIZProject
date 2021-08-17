@@ -1,7 +1,5 @@
 package projekt.wsiz;
 
-import projekt.wsiz.Employee;
-
 import java.util.Scanner;
 
 public class Program {

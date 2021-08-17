@@ -21,6 +21,12 @@ public class Manager extends Employee {
         return "K " + super.toString() + this.teamSize;
     }
 
+    //5% premii od wynagrodzenia bazowego za każde 5 osób w zespole
+    @Override
+    public int getTotalSalary() {
+        return (int) (getSalary() + getSalary() * (teamSize / 5) * 0.05);
+    }
+
     static Manager read() {
         Scanner scan = new Scanner(System.in);
         Manager manager = new Manager();

@@ -16,11 +16,21 @@ public class Developer extends Employee {
         return "P " + super.toString();
     }
 
+
+    //2% premii od wynagrodzenia bazowego za każdą umiejętność (tablica skills)
+    @Override
+    public int getTotalSalary() {
+        return (int) (getSalary() + getSalary() * getSkills().length * 0.02);
+    }
+
+
     static Developer read() {
         Developer developer = new Developer();
         developer.readFields();
 
         return developer;
     }
+
+
 }
 

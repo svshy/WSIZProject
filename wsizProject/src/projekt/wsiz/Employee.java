@@ -7,6 +7,23 @@ import java.util.Scanner;
 public abstract class Employee {
     private String firstname;
     private String lastname;
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
+    public String[] getSkills() {
+        return skills;
+    }
+
+    public void setSkills(String[] skills) {
+        this.skills = skills;
+    }
+
     private int age;
     private Sex sex;
     private int salary;
@@ -40,7 +57,7 @@ public abstract class Employee {
 
     @Override
     public String toString() {
-        return firstname + " " + lastname + " " + age + " " + sex.getSex() + " " + salary + " " + Arrays.toString(skills) + " ";
+        return firstname + " " + lastname + " " + age + " " + sex.getSex() + " " + getTotalSalary() + " " + Arrays.toString(skills) + " ";
 
     }
 
@@ -65,4 +82,6 @@ public abstract class Employee {
         }
         this.skills = skills;
     }
+
+    public abstract int getTotalSalary();
 }
