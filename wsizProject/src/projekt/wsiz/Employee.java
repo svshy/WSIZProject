@@ -21,7 +21,7 @@ public abstract class Employee {
         this.skills = skills;
     }
 
-    protected Employee(){
+    protected Employee() {
 
     }
 
@@ -40,11 +40,11 @@ public abstract class Employee {
 
     @Override
     public String toString() {
-        return firstname + " " + lastname + " " + age + " " + sex.getSex() + " " + salary + " " + Arrays.toString(skills);
+        return firstname + " " + lastname + " " + age + " " + sex.getSex() + " " + salary + " " + Arrays.toString(skills) + " ";
 
     }
 
-    protected void readFields(){
+    protected void readFields() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Podaj imię: ");
         this.firstname = scan.next();

@@ -10,8 +10,13 @@ public class Developer extends Employee {
         super();
     }
 
+    //Developer z przedrostkiem "P" (Programista)
+    @Override
+    public String toString() {
+        return "P " + super.toString();
+    }
 
-    static Developer read(){
+    static Developer read() {
         Developer developer = new Developer();
         developer.readFields();
 
