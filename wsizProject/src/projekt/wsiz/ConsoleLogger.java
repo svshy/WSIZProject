@@ -1,6 +1,6 @@
 package projekt.wsiz;
 
-public class ConsoleLogger {
+public class ConsoleLogger implements Logger{
 
     public void info(String log) {
         log("INFO: ", log);

@@ -5,7 +5,7 @@ import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class FileLogger {
+public class FileLogger implements Logger {
 
     private PrintWriter writer;
 
