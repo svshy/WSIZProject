@@ -6,15 +6,21 @@ import java.util.Scanner;
 public class Company {
 
     private ArrayList<Employee> employees = new ArrayList<>();
+    private final ConsoleLogger logger;
+
+    public Company(ConsoleLogger logger) {
+        this.logger = logger;
+    }
 
     public void add(Employee newEmployee) {
         for (Employee employee : employees) {
             if (newEmployee.equals(employee)) {
-                System.out.println(newEmployee + " - Taki pracownik już istnieje");
+                logger.error("Próba dodania pracownika o tych samych danych: " + employee);
                 return;
             }
         }
         employees.add(newEmployee);
+        logger.info("Pracownik dodany (" + newEmployee + ")");
     }
 
 
@@ -33,11 +39,13 @@ public class Company {
         System.out.println("Podaj numer porządkowy pracownika, którego chcesz usunąć");
         int employeeIndex = scan.nextInt();
         while (employeeIndex < 1 || employeeIndex > employees.size()) {
-            System.err.println("Lista nie zawiera pracownika o podanym numerze porządkowym");
-            System.err.println("Podaj poprawny numer porządkowy pracownika");
+            logger.error("Lista nie zawiera pracownika o podanym numerze porządkowym");
+            logger.error("Próba usunięcia pracownika o niepoprawnym numerze porządkowym: " + employeeIndex);
+            System.out.println("Podaj poprawny numer porządkowy pracownika");
             employeeIndex = scan.nextInt();
         }
-        employees.remove(employeeIndex - 1);
+        Employee employee = employees.remove(employeeIndex - 1);
+        logger.info("Pracownik usunięty: (" + employee + ")");
     }
 
     public void printEmployees() {

@@ -6,7 +6,7 @@ public class Program {
 
     public static void main(String[] args) {
 
-        Company company = new Company();
+        Company company = new Company(new ConsoleLogger());
 
         Scanner scan = new Scanner(System.in);
 
