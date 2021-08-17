@@ -1,14 +1,15 @@
 package projekt.wsiz;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Company {
 
     private ArrayList<Employee> employees = new ArrayList<>();
-    private final ConsoleLogger logger;
+    private final FileLogger logger;
 
-    public Company(ConsoleLogger logger) {
+    public Company(FileLogger logger) {
         this.logger = logger;
     }
 

@@ -6,8 +6,8 @@ public class Program {
 
     public static void main(String[] args) {
 
-        Company company = new Company(new ConsoleLogger());
-
+        FileLogger fileLogger = new FileLogger("company-log.txt");
+        Company company = new Company(fileLogger);
         Scanner scan = new Scanner(System.in);
 
         boolean isWorking = true;
@@ -42,6 +42,7 @@ public class Program {
             }
 
         }
+        fileLogger.close();
     }
 
 }

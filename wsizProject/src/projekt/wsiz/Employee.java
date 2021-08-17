@@ -57,7 +57,7 @@ public abstract class Employee {
 
     @Override
     public String toString() {
-        return firstname + " " + lastname + " " + age + " " + sex.getSex() + " " + getTotalSalary() + " " + Arrays.toString(skills) + " ";
+        return firstname + " " + lastname + " " + age + " " + sex.getSex() + " " + getTotalSalary() + " " + Arrays.toString(skills);
 
     }
 
@@ -75,7 +75,7 @@ public abstract class Employee {
         System.out.print("Podaj zarobki: ");
         this.salary = scan.nextInt();
         scan.nextLine();
-        System.out.println("Podaj umiejętności: ");
+        System.out.print("Podaj umiejętności: ");
         String[] skills = scan.nextLine().split(",");
         for (int i = 0; i < skills.length; i++) {
             skills[i] = skills[i].trim();

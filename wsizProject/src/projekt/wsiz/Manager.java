@@ -18,7 +18,7 @@ public class Manager extends Employee {
     //Manager z przedrostkiem "K" (Kierownik)
     @Override
     public String toString() {
-        return "K " + super.toString() + this.teamSize;
+        return "K " + super.toString() + " " + this.teamSize;
     }
 
     //5% premii od wynagrodzenia bazowego za każde 5 osób w zespole
@@ -32,7 +32,7 @@ public class Manager extends Employee {
         Manager manager = new Manager();
 
         manager.readFields();
-        System.out.println("Podaj ilość osób w zespole");
+        System.out.print("Podaj ilość osób w zespole: ");
         manager.teamSize = scan.nextInt();
 
         return manager;

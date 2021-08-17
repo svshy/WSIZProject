@@ -2,12 +2,16 @@ package projekt.wsiz;
 
 public class ConsoleLogger {
 
-    public void info(String log){
-        System.out.println("```\n" + "INFO : " + log + "\n```");
+    public void info(String log) {
+        log("INFO: ", log);
     }
 
-    public void error(String log){
-        System.err.println("```\n" + "ERROR : " + log + "\n```");
+    public void error(String log) {
+        log("ERROR: ", log);
+    }
+
+    private void log(String prefix, String log) {
+        System.out.println(prefix + log);
     }
 
 }
