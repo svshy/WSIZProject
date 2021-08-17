@@ -5,9 +5,14 @@ import java.util.Scanner;
 public class Program {
 
     public static void main(String[] args) {
+        FileLogger fileLoggerInfo = new FileLogger("company-log-info.txt", true, false);
+        FileLogger fileLoggerError = new FileLogger("company-log-error.txt", false, true);
+        ConsoleLogger consoleLogger = new ConsoleLogger();
 
-        FileLogger fileLogger = new FileLogger("company-log.txt", true, true);
-        Company company = new Company(fileLogger);
+        Logger[] loggers = {fileLoggerInfo, fileLoggerError, consoleLogger};
+
+        MultiLogger multiLogger = new MultiLogger(loggers);
+        Company company = new Company(multiLogger);
         Scanner scan = new Scanner(System.in);
 
         boolean isWorking = true;
@@ -42,7 +47,9 @@ public class Program {
             }
 
         }
-        fileLogger.close();
+        fileLoggerError.close();
+        fileLoggerInfo.close();
+
     }
 
 }
